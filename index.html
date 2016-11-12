@@ -42,7 +42,7 @@
     <!-- Temporarily load directly polyfill untill release new tools -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
-    <link rel="import" href="/src/my-app.html" async>
+    <link rel="import" href="/src/volcano-app.html" async>
 
     <style>
       body {
@@ -54,7 +54,7 @@
       }
 
       /* Befor import link loaded */
-      my-app[unresolved] {
+      volcano-app[unresolved] {
         display: block;
         font-weight: 300;
         margin-left: 2em;
@@ -64,7 +64,7 @@
     </style>
   </head>
   <body>
-    <my-app unresolved>Volcano ...</my-app>
+    <volcano-app unresolved>Volcano ...</volcano-app>
 
     <script>
       (function() {
