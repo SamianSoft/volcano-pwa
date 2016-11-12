@@ -115,6 +115,10 @@
         }
       }
 
+      ready () {
+        this.removeAttribute('unresolved');
+      }
+
       _routePageChanged(page) {
         this.page = page || 'view1';
       }
