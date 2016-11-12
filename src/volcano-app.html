@@ -12,6 +12,12 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
 <link rel="import" href="app-icons.html"/>
 
+<!-- Temporary disable lazy load until polymer 2.0 released. -->
+<link rel="import" href="page-view1.html"/>
+<link rel="import" href="page-view2.html"/>
+<link rel="import" href="page-view3.html"/>
+<link rel="import" href="page-404.html"/>
+
 <dom-module id="volcano-app">
   <template>
     <style>
@@ -128,8 +134,8 @@
 
       _pageChanged (page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('page-' + page + '.html');
-        Polymer.Utils.importHref(resolvedPageUrl, null, () => this._showPage404(), true);
+        // var resolvedPageUrl = this.resolveUrl('page-' + page + '.html');
+        // Polymer.Utils.importHref(resolvedPageUrl, null, () => this._showPage404(), true);
       }
 
       _showPage404 () {
