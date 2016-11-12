@@ -1,5 +1,9 @@
-class Page404 extends Polymer.Element {
-  static get is() { return 'page-404'; }
-}
+(function () {
+  'use strict';
 
-customElements.define(Page404.is, Page404);
+  class Page404 extends Polymer.Element {
+    static get is() { return 'page-404'; }
+  }
+
+  customElements.define(Page404.is, Page404);
+})();

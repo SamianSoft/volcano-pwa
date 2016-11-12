@@ -1,5 +1,9 @@
-class PageView3 extends Polymer.Element {
-  static get is() { return 'page-view3'; }
-}
+(function () {
+  'use strict';
 
-customElements.define(PageView3.is, PageView3);
+  class PageView3 extends Polymer.Element {
+    static get is() { return 'page-view3'; }
+  }
+
+  customElements.define(PageView3.is, PageView3);
+})();
