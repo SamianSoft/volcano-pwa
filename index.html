@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"/>
+
+    <title>Volcano PWA</title>
+    <meta name="description" content="Volcano Progressive Web Application"/>
+
+    <link rel="icon" href="/images/favicon.ico"/>
+
+    <!-- Web Application Manifest -->
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json"/>
+
+    <!-- Color the status bar on mobile devices -->
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5"/>
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="application-name" content="Volcano PWA"/>
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Volcano PWA"/>
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png"/>
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png"/>
+    <meta name="msapplication-TileColor" content="#3F51B5"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <link rel="import" href="/src/volcano-app.html" async>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #eeeeee;
+      }
+
+      /* Befor import link loaded */
+      volcano-app[unresolved] {
+        display: block;
+        font-weight: 300;
+        padding: 2.5em 2em;
+        font-size: 1.9em;
+        cursor: wait;
+      }
+    </style>
+  </head>
+  <body>
+    <volcano-app unresolved>Volcano ...</volcano-app>
+
+    <!-- Temporarily load directly polyfill untill release new tools -->
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <script>
+      (function() {
+      'use strict';
+        // Load pre-caching Service Worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
