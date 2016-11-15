@@ -20,17 +20,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script src="../bower_components/web-component-tester/browser.js"></script>
 
     <!-- Import the element to test -->
-    <link rel="import" href="../src/my-view1.html"/>
+    <link rel="import" href="../src/page-view1.html"/>
+    <link rel="import" href="../src/page-view2.html"/>
+    <link rel="import" href="../src/page-view3.html"/>
   </head>
   <body>
     <test-fixture id="basic">
       <template>
-        <my-view1></my-view1>
+        <page-view1></page-view1>
       </template>
     </test-fixture>
 
     <script>
-      suite('my-view1 tests', function() {
+      suite('page-view1 tests', function() {
         var home;
 
         setup(function() {
