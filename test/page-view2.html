@@ -14,17 +14,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"/>
 
-    <title>Tests</title>
+    <title>page-view2</title>
 
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../bower_components/web-component-tester/browser.js"></script>
+
+    <!-- Import the element to test -->
+    <link rel="import" href="../src/page-view2.html"/>
   </head>
   <body>
+    <test-fixture id="basic">
+      <template>
+        <page-view2></page-view2>
+      </template>
+    </test-fixture>
+
     <script>
-      WCT.loadSuites([
-        'page-view1.html,
-        'page-view2.html,
-        'page-view3.html,
-      ]);
+      suite('page-view2 tests', function() {
+        var home;
+
+        setup(function() {
+          home = fixture('basic');
+        });
+
+        test('Number in circle should be 2', function() {
+          var circle = Polymer.dom(home.root).querySelector('.circle');
+          assert.equal(circle.textContent, '2');
+        })
+      });
     </script>
   </body>
 </html>
