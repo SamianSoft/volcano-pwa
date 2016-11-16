@@ -30,13 +30,35 @@
         cursor: default;
       }
 
-      app-header {
-        color: #fff;
+      .bg-header {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 264px;
         background-color: var(--app-primary-color);
+        color: #fff;
+      }
+
+      app-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: #e91e63;
+        color: #fff;
+        /*--app-header-shadow: {
+          transition: none;
+        };*/
       }
 
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
+      }
+
+      [main-title] {
+        margin-left: 30px;
+        font-weight: 300;
       }
 
       .drawer-list {
@@ -71,17 +93,18 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer slot="drawer">
+      <!--<app-drawer slot="drawer">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="view1" href="/view1">View One</a>
           <a name="view2" href="/view2">View Two</a>
           <a name="view3" href="/view3">View Three</a>
         </iron-selector>
-      </app-drawer>
+      </app-drawer>-->
 
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
+        <div class="bg-header"></div>
 
         <app-header fixed>
           <app-toolbar>
