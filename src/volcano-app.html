@@ -111,6 +111,10 @@
         margin-top: 40px;
       }
 
+      .appdrawclose {
+        margin-top: 50px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -136,6 +140,9 @@
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+            </div>
+            <div align="left" class="appdrawclose">
+              <paper-icon-button on-tap="closedraw" icon="arrow-forward"></paper-icon-button>
             </div>
           </div>
 
