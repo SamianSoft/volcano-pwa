@@ -115,6 +115,21 @@
         margin-top: 50px;
       }
 
+      .box-profile {
+        padding: 10px;
+        margin-right: 18px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .box-profile .profile-img {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -128,9 +143,9 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <div class="box-profile">
-            <img src="" alt="">
-            <p>علی رمضانی</p>
+          <div align="right" class="box-profile">
+            <div class="profile-img"></div>
+            <span>علی رمضانی</span>
           </div>
           <div class="icon">
             <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
