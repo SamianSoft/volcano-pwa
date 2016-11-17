@@ -45,7 +45,7 @@
       app-header {
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         width: 100%;
         background-color: #4285f4;
         color: #fff;
@@ -104,7 +104,7 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer align="right" slot="drawer">
+      <app-drawer align="end" slot="drawer">
         <app-toolbar>منو</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="view1" href="/view1">پیج یک</a>
@@ -119,7 +119,7 @@
 
         <app-header fixed>
           <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
             <div main-title>Volcano App</div>
           </app-toolbar>
         </app-header>
