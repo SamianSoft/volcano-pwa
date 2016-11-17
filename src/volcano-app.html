@@ -93,6 +93,14 @@
         font-size: 14px;
       }
 
+      .icon paper-icon-button {
+        margin-left: 10px;
+      }
+
+      .iconsetting {
+        margin-top: 40px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -107,16 +115,20 @@
       <app-drawer align="right" slot="drawer">
         <app-toolbar>منو</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-          <a name="view2" href="/view2">کاربران<paper-icon-button icon="help"></paper-icon-button></a>
-          <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help"></paper-icon-button></a>
-          <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help"></paper-icon-button></a>
-          <a name="view2" href="/view2">کالاها<paper-icon-button icon="help"></paper-icon-button></a>
-          <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help"></paper-icon-button></a>
+          <div class="icon">
+            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
 
-          <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help"></paper-icon-button></a>
-          <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
-          <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+            <div class="iconsetting">
+              <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
+              <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+            </div>
+          </div>
 
         </iron-selector>
       </app-drawer>
