@@ -98,11 +98,13 @@
       }
 
       footer {
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
+        /*height: 40px;*/
+        padding: 5px;
         background-color: white;
-        font-size: 14px;
+        --paper-icon-button: {
+          width: 35px;
+          height: 35px;
+        }
       }
 
       .icon paper-icon-button {
@@ -195,7 +197,7 @@
       </app-header-layout>
 
       <footer>
-        &copy; PTC
+        <box-menu-icon align="left"></box-menu-icon>
       </footer>
     </app-drawer-layout>
   </template>
