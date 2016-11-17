@@ -13,9 +13,11 @@
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html"/>
 <link rel="import" href="../bower_components/paper-styles/color.html"/>
 
+
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
+<link rel="import" href="box-menu-icon.html"/>
 <link rel="import" href="page-view1.html"/>
 <link rel="import" href="page-view2.html"/>
 <link rel="import" href="page-view3.html"/>
@@ -175,8 +177,8 @@
         <app-header align="right" fixed>
           <app-toolbar>
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
+            <box-menu-icon align="left"></box-menu-icon>
             <div main-title>Volcano App</div>
-            <box-menu-icon></box-menu-icon>
           </app-toolbar>
         </app-header>
 
