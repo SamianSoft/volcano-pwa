@@ -10,7 +10,9 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html"/>
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html"/>
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html"/>
+<link rel="import" href="../bower_components/paper-styles/color.html"/>
+
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
@@ -78,11 +80,19 @@
 
         line-height: 40px;
       }
+       .drawer-list a:hover {
+         background-color: var(--paper-blue-50);
+       }
 
       .drawer-list a.iron-selected {
         color: black;
-
         font-weight: bold;
+      }
+
+      app-drawer {
+        --app-drawer-content-container: {
+          background-color: var(--paper-blue-100);
+        }
       }
 
       footer {
@@ -113,7 +123,6 @@
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
-        <app-toolbar>منو</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="icon">
             <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
