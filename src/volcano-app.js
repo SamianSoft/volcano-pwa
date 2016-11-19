@@ -56,6 +56,16 @@
     _showPage404 () {
       this.page = '404';
     }
+
+    _closedraw () {
+      var closeclass = this.shadowRoot.querySelector('app-drawer');
+      if (closeclass.classList.contains('close')) {
+        closeclass.classList.remove('close');
+      }
+      else {
+        closeclass.classList.add('close');
+      }
+    }
   }
 
   customElements.define(VolcanoApp.is, VolcanoApp);

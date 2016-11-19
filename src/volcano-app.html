@@ -137,7 +137,7 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer class="close" align="right" slot="drawer">
+      <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="icon flex-vertical">
             <div class="iconpage flexchild-vertical">
@@ -155,7 +155,7 @@
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
             </div>
             <div align="left">
-              <paper-icon-button on-tap="closedraw" icon="arrow-forward"></paper-icon-button>
+              <paper-icon-button on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
             </div>
           </div>
 
