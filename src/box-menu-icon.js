@@ -15,9 +15,10 @@
     }
 
     ready () {
-      super.ready();
-      var s = this.$.one;
-      s.addEventListener('fireevent', this.myEvent);
+      super.ready()
+      this.$.one.addEventListener('fireevent1', this.myEvent);
+      this.$.two.addEventListener('fireevent2', this.myEvent);
+      this.$.three.addEventListener('fireevent3', this.myEvent);
     }
 
     // myEvent () {
