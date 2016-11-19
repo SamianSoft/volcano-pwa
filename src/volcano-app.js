@@ -56,6 +56,26 @@
     _showPage404 () {
       this.page = '404';
     }
+
+    _closedraw () {
+      var closeclass = this.shadowRoot.querySelector('app-drawer');
+      var btndrawer = this.shadowRoot.querySelector('#btndrawer');
+
+      if (closeclass.classList.contains('close')) {
+        closeclass.classList.remove('close');
+        btndrawer.classList.remove('iconclose');
+        btndrawer.classList.add('iconopen');
+        console.log(btndrawer);
+        closeclass.animate();
+      }
+      else {
+        closeclass.classList.add('close');
+        btndrawer.classList.remove('iconopen');
+        btndrawer.classList.add('iconclose');
+        console.log(btndrawer);
+        closeclass.animate();
+      }
+    }
   }
 
   customElements.define(VolcanoApp.is, VolcanoApp);

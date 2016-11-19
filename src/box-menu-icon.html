@@ -1,0 +1,27 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html"/>
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
+
+<link rel="import" href="app-icons.html"/>
+
+<dom-module id="box-menu-icon">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .rotate {
+        transform: rotate(90deg);
+      }
+    </style>
+
+    <div>
+      <paper-icon-button on-click="fireevent" id="one" icon="help-outline"></paper-icon-button>
+      <paper-icon-button on-click="fireevent" id="two" class="rotate" icon="build"></paper-icon-button>
+      <paper-icon-button on-click="fireevent" id="three" icon="brush"></paper-icon-button>
+    </div>
+
+  </template>
+
+  <script type="text/javascript" src="box-menu-icon.js"></script>
+</dom-module>

@@ -10,10 +10,15 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html"/>
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html"/>
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html"/>
+<link rel="import" href="../bower_components/paper-styles/color.html"/>
+<link rel="import" href="../bower_components/neon-animation/web-animations.html"/>
+
+
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
+<link rel="import" href="box-menu-icon.html"/>
 <link rel="import" href="page-view1.html"/>
 <link rel="import" href="page-view2.html"/>
 <link rel="import" href="page-view3.html"/>
@@ -31,12 +36,21 @@
         cursor: default;
       }
 
+      .flex-vertical {
+        @apply(--layout-vertical);
+        height: 600px;
+      }
+
+      .flexchild-vertical {
+        @apply(--layout-flex);
+      }
+
       .bg-header {
         position: fixed;
         top: 0px;
         left: 0;
         width: 100%;
-        height: 264px;
+        height: 30vh;
         background-color: var(--app-primary-color);
         color: #fff;
         z-index: -1;
@@ -45,9 +59,9 @@
       app-header {
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         width: 100%;
-        background-color: #e91e63;
+        background-color: #4285f4;
         color: #fff;
         --app-header-shadow: {
           transition: none;
@@ -78,20 +92,76 @@
 
         line-height: 40px;
       }
+       .drawer-list a:hover {
+         background-color: var(--paper-blue-50);
+       }
 
       .drawer-list a.iron-selected {
         color: black;
-
         font-weight: bold;
       }
 
-      footer {
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        background-color: white;
-        font-size: 14px;
+      app-drawer {
+        --app-drawer-content-container: {
+          background-color: var(--paper-blue-100);
+        }
       }
+
+      footer {
+        /*height: 40px;*/
+        padding: 5px;
+        background-color: white;
+        --paper-icon-button: {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      .icon paper-icon-button {
+        margin-left: 10px;
+      }
+
+      .close, .close a  {
+        --app-drawer-width: 90px;
+        font-size: 0;
+        transition: transform 3s;
+      }
+
+      .close paper-icon-button {
+        margin: 0;
+        margin-right: 8px;
+      }
+
+<<<<<<< HEAD
+      .iconopen {
+        text-align: left;
+        transform: rotate(360deg);
+=======
+      .appdrawclose {
+        margin-top: 40px;
+      }
+
+      .box-profile {
+        padding: 10px;
+        margin: 0 18px 18px 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .box-profile .profile-img {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+>>>>>>> feature/VA-10_box-menu-icon
+      }
+
+      .iconclose {
+        margin-right: 16px;
+        transform: rotate(180deg);
+      }
+
 
     </style>
 
@@ -104,22 +174,55 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <!--<app-drawer slot="drawer">
-        <app-toolbar>Menu</app-toolbar>
+      <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
+<<<<<<< HEAD
+          <div class="icon flex-vertical">
+            <div class="iconpage flexchild-vertical">
+              <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+              <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            </div>
+
+            <div class="flexchild-vertical">
+=======
+          <div align="right" class="box-profile">
+            <div class="profile-img"></div>
+            <span>علی رمضانی</span>
+          </div>
+          <div class="icon">
+            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+
+            <div class="iconsetting">
+>>>>>>> feature/VA-10_box-menu-icon
+              <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
+              <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+            </div>
+            <div class="iconopen">
+              <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+            </div>
+          </div>
+
         </iron-selector>
-      </app-drawer>-->
+      </app-drawer>
 
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
         <div class="bg-header"></div>
 
-        <app-header fixed>
+        <app-header align="right" fixed>
           <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
+            <box-menu-icon align="left"></box-menu-icon>
             <div main-title>Volcano App</div>
           </app-toolbar>
         </app-header>
@@ -137,7 +240,7 @@
       </app-header-layout>
 
       <footer>
-        &copy; PTC
+        <box-menu-icon align="left"></box-menu-icon>
       </footer>
     </app-drawer-layout>
   </template>
