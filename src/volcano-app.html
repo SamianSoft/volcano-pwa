@@ -128,6 +128,18 @@
         margin-right: 8px;
       }
 
+      .iconopen {
+        text-align: left;
+        transform: rotate(360deg);
+      }
+
+      .iconclose {
+        text-align: left;
+        margin-right: 16px;
+        transform: rotate(180deg);
+      }
+
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -156,8 +168,8 @@
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
             </div>
-            <div align="left">
-              <paper-icon-button on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+            <div class="iconopen">
+              <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
             </div>
           </div>
 
