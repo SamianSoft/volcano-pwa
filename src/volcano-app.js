@@ -61,9 +61,11 @@
       var closeclass = this.shadowRoot.querySelector('app-drawer');
       if (closeclass.classList.contains('close')) {
         closeclass.classList.remove('close');
+        closeclass.animate();
       }
       else {
         closeclass.classList.add('close');
+        closeclass.animate();
       }
     }
   }
