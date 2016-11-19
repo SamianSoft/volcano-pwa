@@ -14,10 +14,6 @@
 <link rel="import" href="../bower_components/paper-styles/color.html"/>
 <link rel="import" href="../bower_components/neon-animation/web-animations.html"/>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/feature/VA-5_fix_style
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
@@ -41,7 +37,7 @@
 
       .flex-vertical {
         @apply(--layout-vertical);
-        height: 600px;
+        height: 470px;
       }
 
       .flexchild-vertical {
@@ -135,13 +131,9 @@
         margin-right: 8px;
       }
 
-<<<<<<< HEAD
       .iconopen {
         text-align: left;
         transform: rotate(360deg);
-=======
-      .appdrawclose {
-        margin-top: 40px;
       }
 
       .box-profile {
@@ -157,60 +149,12 @@
         height: 50px;
         border-radius: 50%;
         margin-bottom: 5px;
-<<<<<<< HEAD
->>>>>>> feature/VA-10_box-menu-icon
       }
 
-<<<<<<< HEAD
-      .icon paper-icon-button {
-        margin-left: 10px;
-      }
-
-      .close, .close a  {
-        --app-drawer-width: 90px;
-        font-size: 0;
-        transition: transform 3s;
-      }
-
-      .close paper-icon-button {
-        margin: 0;
-        margin-right: 8px;
-      }
-
-<<<<<<< HEAD
-      .iconopen {
-        text-align: left;
-        transform: rotate(360deg);
-=======
-      .appdrawclose {
-        margin-top: 40px;
-      }
-
-      .box-profile {
-        padding: 10px;
-        margin: 0 18px 18px 0;
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .box-profile .profile-img {
-        background-color: #fff;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-bottom: 5px;
-=======
->>>>>>> feature/VA-12_app-draw
->>>>>>> feature/VA-13_box-profile
-      }
-
-=======
->>>>>>> origin/feature/VA-5_fix_style
       .iconclose {
         margin-right: 16px;
         transform: rotate(180deg);
       }
-
 
     </style>
 
@@ -225,7 +169,10 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-<<<<<<< HEAD
+          <div align="right" class="box-profile">
+            <div class="profile-img"></div>
+            <span>علی رمضانی</span>
+          </div>
           <div class="icon flex-vertical">
             <div class="iconpage flexchild-vertical">
               <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
@@ -235,31 +182,7 @@
               <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
             </div>
-
-            <div class="flexchild-vertical">
-=======
-          <div align="right" class="box-profile">
-            <div class="profile-img"></div>
-            <span>علی رمضانی</span>
-          </div>
-          <div class="icon">
-            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-
-            <div class="iconsetting">
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feature/VA-13_box-profile
-=======
->>>>>>> feature/VA-10_box-menu-icon
->>>>>>> origin/feature/VA-5_fix_style
-=======
->>>>>>> feature/VA-13_box-profile
->>>>>>> feature/VA-12_app-draw
+            <div class="iconsetting flexchild-vertical">
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
@@ -268,7 +191,7 @@
               <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
             </div>
           </div>
-
+          </div>
         </iron-selector>
       </app-drawer>
 
@@ -279,10 +202,7 @@
         <app-header align="right" fixed>
           <app-toolbar>
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
-<<<<<<< HEAD
-=======
             <box-menu-icon align="left"></box-menu-icon>
->>>>>>> origin/feature/VA-5_fix_style
             <div main-title>Volcano App</div>
           </app-toolbar>
         </app-header>
