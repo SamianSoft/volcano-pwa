@@ -33,6 +33,15 @@
         cursor: default;
       }
 
+      .flex-vertical {
+        @apply(--layout-vertical);
+        height: 600px;
+      }
+
+      .flexchild-vertical {
+        @apply(--layout-flex);
+      }
+
       .bg-header {
         position: fixed;
         top: 0px;
@@ -107,14 +116,6 @@
         margin-left: 10px;
       }
 
-      .iconsetting {
-        margin-top: 40px;
-      }
-
-      .appdrawclose {
-        margin-top: 50px;
-      }
-
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -128,20 +129,22 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <div class="icon">
-            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+          <div class="icon flex-vertical">
+            <div class="iconpage flexchild-vertical">
+              <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+              <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            </div>
 
-            <div class="iconsetting">
+            <div class="flexchild-vertical">
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
             </div>
-            <div align="left" class="appdrawclose">
+            <div align="left">
               <paper-icon-button on-tap="closedraw" icon="arrow-forward"></paper-icon-button>
             </div>
           </div>
