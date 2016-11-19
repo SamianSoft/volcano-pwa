@@ -116,6 +116,16 @@
         margin-left: 10px;
       }
 
+      .close, .close a  {
+        --app-drawer-width: 90px;
+        font-size: 0;
+      }
+
+      .close paper-icon-button {
+        margin: 0;
+        margin-right: 8px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -127,7 +137,7 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer align="right" slot="drawer">
+      <app-drawer class="close" align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="icon flex-vertical">
             <div class="iconpage flexchild-vertical">
