@@ -14,9 +14,11 @@
 <link rel="import" href="../bower_components/paper-styles/color.html"/>
 <link rel="import" href="../bower_components/neon-animation/web-animations.html"/>
 
+
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
+<link rel="import" href="box-menu-icon.html"/>
 <link rel="import" href="page-view1.html"/>
 <link rel="import" href="page-view2.html"/>
 <link rel="import" href="page-view3.html"/>
@@ -106,11 +108,13 @@
       }
 
       footer {
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
+        /*height: 40px;*/
+        padding: 5px;
         background-color: white;
-        font-size: 14px;
+        --paper-icon-button: {
+          width: 35px;
+          height: 35px;
+        }
       }
 
       .icon paper-icon-button {
@@ -128,9 +132,29 @@
         margin-right: 8px;
       }
 
+<<<<<<< HEAD
       .iconopen {
         text-align: left;
         transform: rotate(360deg);
+=======
+      .appdrawclose {
+        margin-top: 40px;
+      }
+
+      .box-profile {
+        padding: 10px;
+        margin: 0 18px 18px 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .box-profile .profile-img {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+>>>>>>> feature/VA-10_box-menu-icon
       }
 
       .iconclose {
@@ -152,6 +176,7 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+<<<<<<< HEAD
           <div class="icon flex-vertical">
             <div class="iconpage flexchild-vertical">
               <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
@@ -163,6 +188,21 @@
             </div>
 
             <div class="flexchild-vertical">
+=======
+          <div align="right" class="box-profile">
+            <div class="profile-img"></div>
+            <span>علی رمضانی</span>
+          </div>
+          <div class="icon">
+            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+
+            <div class="iconsetting">
+>>>>>>> feature/VA-10_box-menu-icon
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
@@ -182,6 +222,7 @@
         <app-header align="right" fixed>
           <app-toolbar>
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
+            <box-menu-icon align="left"></box-menu-icon>
             <div main-title>Volcano App</div>
           </app-toolbar>
         </app-header>
@@ -199,7 +240,7 @@
       </app-header-layout>
 
       <footer>
-        &copy; PTC
+        <box-menu-icon align="left"></box-menu-icon>
       </footer>
     </app-drawer-layout>
   </template>
