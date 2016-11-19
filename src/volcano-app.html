@@ -128,9 +128,29 @@
         margin-right: 8px;
       }
 
+<<<<<<< HEAD
       .iconopen {
         text-align: left;
         transform: rotate(360deg);
+=======
+      .appdrawclose {
+        margin-top: 40px;
+      }
+
+      .box-profile {
+        padding: 10px;
+        margin: 0 18px 18px 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .box-profile .profile-img {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+>>>>>>> feature/VA-13_box-profile
       }
 
       .iconclose {
@@ -152,6 +172,7 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+<<<<<<< HEAD
           <div class="icon flex-vertical">
             <div class="iconpage flexchild-vertical">
               <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
@@ -163,6 +184,21 @@
             </div>
 
             <div class="flexchild-vertical">
+=======
+          <div align="right" class="box-profile">
+            <div class="profile-img"></div>
+            <span>علی رمضانی</span>
+          </div>
+          <div class="icon">
+            <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+            <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+            <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+
+            <div class="iconsetting">
+>>>>>>> feature/VA-13_box-profile
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
