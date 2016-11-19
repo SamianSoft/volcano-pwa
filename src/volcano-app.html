@@ -37,7 +37,7 @@
 
       .flex-vertical {
         @apply(--layout-vertical);
-        height: 470px;
+        height: 75vh;
       }
 
       .flexchild-vertical {
@@ -108,6 +108,10 @@
 
       footer {
         /*height: 40px;*/
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         padding: 5px;
         background-color: white;
         --paper-icon-button: {
@@ -182,7 +186,7 @@
               <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
             </div>
-            <div class="iconsetting flexchild-vertical">
+            <div class="iconsetting">
               <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
               <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
               <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
@@ -217,11 +221,10 @@
           <page-view3 name="view3"></page-view3>
           <page-404 name="404"></page-404>
         </iron-pages>
+        <footer>
+          <box-menu-icon align="left"></box-menu-icon>
+        </footer>
       </app-header-layout>
-
-      <footer>
-        <box-menu-icon align="left"></box-menu-icon>
-      </footer>
     </app-drawer-layout>
   </template>
 
