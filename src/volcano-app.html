@@ -1,32 +1,32 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html"/>
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html"/>
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html"/>
-<link rel="import" href="../bower_components/app-layout/app-header/app-header.html"/>
-<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html"/>
-<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html"/>
-<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html"/>
-<link rel="import" href="../bower_components/app-route/app-location.html"/>
-<link rel="import" href="../bower_components/app-route/app-route.html"/>
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html"/>
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html"/>
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html"/>
-<link rel="import" href="../bower_components/paper-styles/color.html"/>
-<link rel="import" href="../bower_components/neon-animation/web-animations.html"/>
+<link rel="import" href="../bower_components/polymer/polymer-element.html" />
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html" />
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html" />
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html" />
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html" />
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html" />
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html" />
+<link rel="import" href="../bower_components/app-route/app-location.html" />
+<link rel="import" href="../bower_components/app-route/app-route.html" />
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html" />
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html" />
+<link rel="import" href="../bower_components/paper-styles/color.html" />
+<link rel="import" href="../bower_components/neon-animation/web-animations.html" />
 
-<link rel="import" href="app-icons.html"/>
+<link rel="import" href="app-icons.html" />
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
-<link rel="import" href="box-profile.html"/>
-<link rel="import" href="box-breadcrumb.html"/>
-<link rel="import" href="box-menu-icon.html"/>
-<link rel="import" href="page-view1.html"/>
-<link rel="import" href="page-view2.html"/>
-<link rel="import" href="page-view3.html"/>
-<link rel="import" href="page-404.html"/>
+<link rel="import" href="box-profile.html" />
+<link rel="import" href="box-breadcrumb.html" />
+<link rel="import" href="box-menu-icon.html" />
+<link rel="import" href="page-view1.html" />
+<link rel="import" href="page-view2.html" />
+<link rel="import" href="page-view3.html" />
+<link rel="import" href="page-404.html" />
 
 <dom-module id="volcano-app">
-  <template>
+    <template>
     <style>
       :host {
         --app-primary-color: #4285f4;
@@ -42,7 +42,7 @@
         height: 100vh;
       }
 
-      .flexchild-vertical {
+      .flexchild {
         @apply(--layout-flex);
       }
 
@@ -56,6 +56,10 @@
 
       .flex-start-justified {
         @apply(--layout-start-justified);
+      }
+
+      .flex-equal-justified {
+        @apply --layout-justified;
       }
 
       .bg-header {
@@ -176,6 +180,10 @@
         transform: rotate(180deg);
       }
 
+      .flex{
+        display: flex;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -190,9 +198,9 @@
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="container flex-vertical">
-            <box-profile align="right" class="flexchild-vertical"></box-profile>
+            <box-profile align="right" class="flexchild"></box-profile>
             <div class="icon flex-vertical">
-              <div class="iconpage flexchild-vertical">
+              <div class="iconpage flexchild">
                 <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
                 <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
                 <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
@@ -214,14 +222,14 @@
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout class="flexchild" has-scrolling-region>
         <div class="bg-header"></div>
 
-        <app-header align="right" fixed>
-          <app-toolbar>
+        <app-header fixed>
+          <app-toolbar class="flex-equal-justified layout-horizontal">
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
             <box-menu-icon></box-menu-icon>
-            <box-breadcrumb></box-breadcrumb>
+            <box-breadcrumb ></box-breadcrumb>
           </app-toolbar>
         </app-header>
 
@@ -242,5 +250,5 @@
     </app-drawer-layout>
   </template>
 
-  <script type="text/javascript" src="volcano-app.js"></script>
+    <script type="text/javascript" src="volcano-app.js"></script>
 </dom-module>
