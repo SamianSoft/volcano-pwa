@@ -65,14 +65,14 @@
         closeclass.classList.remove('close');
         btndrawer.classList.remove('iconclose');
         btndrawer.classList.add('iconopen');
-        console.log(btndrawer);
+        // console.log(btndrawer);
         closeclass.animate();
       }
       else {
         closeclass.classList.add('close');
         btndrawer.classList.remove('iconopen');
         btndrawer.classList.add('iconclose');
-        console.log(btndrawer);
+        // console.log(btndrawer);
         closeclass.animate();
       }
     }
