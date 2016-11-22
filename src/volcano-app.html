@@ -38,7 +38,7 @@
 
       .flex-vertical {
         @apply(--layout-vertical);
-        height: 75vh;
+        height: 100vh;
       }
 
       .flexchild-vertical {
@@ -85,6 +85,14 @@
       }
 
       .drawer-list {
+=======
+      [main-title] {
+        margin-left: 30px;
+        font-weight: 300;
+      }
+
+      /*.drawer-list {
+>>>>>>> feature/VA-12_app-draw_right_menu
         margin: 0 20px;
       }
 
@@ -106,13 +114,28 @@
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
-      }
+      }*/
 
       app-drawer {
+        /*height: 100vh;*/
         --app-drawer-content-container: {
           background-color: var(--paper-blue-100);
         }
       }
+
+      app-drawer a {
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        display: block;
+      }
+
+      app-drawer paper-icon-button {
+        margin-right: 18px;
+      }
+
+      app-drawer a:hover {
+         background-color: var(--paper-blue-50);
+       }
 
       footer {
         /*height: 40px;*/
@@ -140,7 +163,13 @@
 
       .close paper-icon-button {
         margin: 0;
-        margin-right: 8px;
+        margin-right: 16px;
+      }
+
+      .close .box-profile {
+        margin: 0;
+        padding: 0;
+        margin: 11px 12px 0 0;
       }
 
       .iconopen {
@@ -181,28 +210,29 @@
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <div align="right" class="box-profile">
-            <div class="profile-img"></div>
-            <span>علی رمضانی</span>
-          </div>
-          <div class="icon flex-vertical">
-            <div class="iconpage flexchild-vertical">
-              <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-              <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
-              <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-              <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
-              <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-              <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+          <div class="container flex-vertical">
+            <div align="right" class="box-profile flexchild-vertical">
+              <div class="profile-img"></div>
+              <span>علی رمضانی</span>
             </div>
-            <div class="iconsetting">
-              <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
-              <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
-              <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+            <div class="icon flex-vertical">
+              <div class="iconpage flexchild-vertical">
+                <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+                <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+              </div>
+              <div class="iconsetting">
+                <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
+                <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+              </div>
+              <div class="iconopen">
+                <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+              </div>
             </div>
-            <div class="iconopen">
-              <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
-            </div>
-          </div>
           </div>
         </iron-selector>
       </app-drawer>
