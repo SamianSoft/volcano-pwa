@@ -1,20 +1,10 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html"/>
-<link rel="import" href="../bower_components/iron-icon/iron-icon.html"/>
-<link rel="import" href="app-icons.html"/>
+<link rel="import" href="../bower_components/polymer/polymer-element.html" />
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
+<link rel="import" href="app-icons.html" />
 
 <dom-module id="box-profile">
-  <template>
+    <template>
     <style>
-      :host {
-        display: block;
-      }
-
-      .box-profile {
-        padding: 10px;
-        margin: 0 18px 18px 0;
-        font-size: 20px;
-        font-weight: bold;
-      }
 
       .profile-img {
         background-color: #fff;
@@ -24,13 +14,21 @@
         margin-bottom: 5px;
       }
 
+      :host{
+        display: block;
+      }
+
+      :host .container {
+        @apply --box-profile;
+      }
+
     </style>
 
-    <div align="right" class="box-profile">
+    <div align="right" class="container">
       <div class="profile-img"></div>
       <span>علی رمضانی</span>
     </div>
   </template>
 
-  <script type="text/javascript" src="box-profile.js"></script>
+    <script type="text/javascript" src="box-profile.js"></script>
 </dom-module>
