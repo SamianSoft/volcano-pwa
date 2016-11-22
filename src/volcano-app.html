@@ -35,6 +35,7 @@
         display: block;
         user-select: none;
         cursor: default;
+
       }
 
       .flex-vertical {
@@ -148,6 +149,15 @@
         }
       }
 
+      .box-profile {
+        --box-profile: {
+          padding: 10px;
+          font-size: 20px;
+          margin: 0 18px 18px 0;
+          font-weight: bold;
+        }
+      }
+
       .icon paper-icon-button {
         margin-left: 10px;
       }
@@ -166,8 +176,11 @@
       .close box-profile {
         margin: 0;
         padding: 0;
-        /*margin: 11px 12px 0 0;*/
-        font-size: 0;
+
+        --box-profile: {
+          font-size: 0;
+          margin: 11px 12px 0 0;
+        }
       }
 
       .iconopen {
@@ -198,7 +211,7 @@
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="container flex-vertical">
-            <box-profile align="right" class="flexchild"></box-profile>
+            <box-profile align="right" class="flexchild box-profile"></box-profile>
             <div class="icon flex-vertical">
               <div class="iconpage flexchild">
                 <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
