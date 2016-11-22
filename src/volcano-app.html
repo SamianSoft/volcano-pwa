@@ -17,7 +17,6 @@
 <link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
-<link rel="import" href="box-profile.html"/>
 <link rel="import" href="box-breadcrumb.html"/>
 <link rel="import" href="box-menu-icon.html"/>
 <link rel="import" href="page-view1.html"/>
@@ -148,7 +147,7 @@
         margin-left: 10px;
       }
 
-      .close, .close a {
+      .close, .close a, .close span {
         --app-drawer-width: 90px;
         font-size: 0;
         transition: transform 3s;
@@ -159,16 +158,30 @@
         margin-right: 16px;
       }
 
-      .close box-profile {
+      .close .box-profile {
         margin: 0;
         padding: 0;
-        /*margin: 11px 12px 0 0;*/
-        font-size: 0;
+        margin: 11px 12px 0 0;
       }
 
       .iconopen {
         text-align: left;
         transform: rotate(360deg);
+      }
+
+      .box-profile {
+        padding: 10px;
+        margin: 0 18px 18px 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .box-profile .profile-img {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 5px;
       }
 
       .iconclose {
@@ -190,7 +203,10 @@
       <app-drawer align="right" slot="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div class="container flex-vertical">
-            <box-profile align="right" class="flexchild-vertical"></box-profile>
+            <div align="right" class="box-profile flexchild-vertical">
+              <div class="profile-img"></div>
+              <span>علی رمضانی</span>
+            </div>
             <div class="icon flex-vertical">
               <div class="iconpage flexchild-vertical">
                 <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
