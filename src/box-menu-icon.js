@@ -15,15 +15,15 @@
     }
 
     ready () {
-      super.ready()
-      this.$.one.addEventListener('fireevent1', this.myEvent);
-      this.$.two.addEventListener('fireevent2', this.myEvent);
-      this.$.three.addEventListener('fireevent3', this.myEvent);
+      super.ready();
+      // this.$.one.addEventListener('fireevent1', this.myEvent);
+      // this.$.two.addEventListener('fireevent2', this.myEvent);
+      // this.$.three.addEventListener('fireevent3', this.myEvent);
     }
 
-    // myEvent () {
-    //   console.log('myEvent');
-    // }
+    fireevent () {
+      var event = new CustomEvent('myevent');
+    }
   }
 
   customElements.define(BoxMenuIcon.is, BoxMenuIcon);
