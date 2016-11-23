@@ -1,10 +1,10 @@
-(function() {
+(function () {
   'use strict';
 
   class BoxProfile extends Polymer.Element {
     static get is() { return 'box-profile'; }
 
-    static get config() {
+    static get config () {
       return {
         properties: {
         },
