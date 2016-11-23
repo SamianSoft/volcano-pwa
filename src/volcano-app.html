@@ -1,32 +1,32 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html" />
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html" />
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html" />
-<link rel="import" href="../bower_components/app-layout/app-header/app-header.html" />
-<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html" />
-<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html" />
-<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html" />
-<link rel="import" href="../bower_components/app-route/app-location.html" />
-<link rel="import" href="../bower_components/app-route/app-route.html" />
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html" />
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html" />
-<link rel="import" href="../bower_components/paper-styles/color.html" />
-<link rel="import" href="../bower_components/neon-animation/web-animations.html" />
+<link rel="import" href="../bower_components/polymer/polymer-element.html"/>
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html"/>
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html"/>
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html"/>
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html"/>
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html"/>
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html"/>
+<link rel="import" href="../bower_components/app-route/app-location.html"/>
+<link rel="import" href="../bower_components/app-route/app-route.html"/>
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html"/>
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html"/>
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html"/>
+<link rel="import" href="../bower_components/paper-styles/color.html"/>
+<link rel="import" href="../bower_components/neon-animation/web-animations.html"/>
 
-<link rel="import" href="app-icons.html" />
+<link rel="import" href="app-icons.html"/>
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
-<link rel="import" href="box-profile.html" />
-<link rel="import" href="box-breadcrumb.html" />
-<link rel="import" href="box-menu-icon.html" />
-<link rel="import" href="page-view1.html" />
-<link rel="import" href="page-view2.html" />
-<link rel="import" href="page-view3.html" />
-<link rel="import" href="page-404.html" />
+<link rel="import" href="box-profile.html"/>
+<link rel="import" href="box-breadcrumb.html"/>
+<link rel="import" href="box-menu-icon.html"/>
+<link rel="import" href="page-view1.html"/>
+<link rel="import" href="page-view2.html"/>
+<link rel="import" href="page-view3.html"/>
+<link rel="import" href="page-404.html"/>
 
 <dom-module id="volcano-app">
-    <template>
+  <template>
     <style>
       :host {
         --app-primary-color: #4285f4;
@@ -104,9 +104,9 @@
 
         line-height: 40px;
       }
-       .drawer-list a:hover {
-         background-color: var(--paper-blue-50);
-       }
+      .drawer-list a:hover {
+        background-color: var(--paper-blue-50);
+      }
 
       .drawer-list a.iron-selected {
         color: black;
@@ -131,8 +131,8 @@
       }
 
       app-drawer a:hover {
-         background-color: var(--paper-blue-50);
-       }
+        background-color: var(--paper-blue-50);
+      }
 
       footer {
         /*height: 40px;*/
@@ -200,10 +200,10 @@
 
     <app-location route="{{route}}"></app-location>
     <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+      route="{{route}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}"></app-route>
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
@@ -246,10 +246,10 @@
         </app-header>
 
         <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="404"
-            role="main">
+          selected="[[page]]"
+          attr-for-selected="name"
+          fallback-selection="404"
+          role="main">
           <page-view1 name="view1"></page-view1>
           <page-view2 name="view2"></page-view2>
           <page-view3 name="view3"></page-view3>
