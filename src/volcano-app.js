@@ -41,6 +41,20 @@
 
       transformBgHeader ();
       // addEventListener('scroll', transformBgHeader);
+
+      this._setHeaderScrollListener(this.$.header, this._headerScroll);
+      // console. log(this._setHeaderScrollListener(appHeader, this._headerScroll));
+      // console.log(this._headerScroll);
+    }
+
+    _setHeaderScrollListener (header, fn) {
+      var target = (header.scrollTarget === this.ownerDocument.documentElement) ? window : header.scrollTarget;
+      target.addEventListener('scroll', fn.bind(this), {passive: true});
+    }
+
+    _headerScroll (evt) {
+      // console.log(this.$.header.getScrollState().progress);
+      this.toggleClass('shrink-to-hidden', this.$.header.getScrollState().progress > 0.5, this.$.fabicon);
     }
 
     _routePageChanged (page) {
