@@ -89,30 +89,6 @@
         --paper-icon-button-ink-color: white;
       }
 
-      /*.drawer-list {
-        margin: 0 20px;
-      }
-
-      .drawer-list a {
-        display: block;
-
-        padding: 0 16px;
-
-        text-decoration: none;
-
-        color: var(--app-secondary-color);
-
-        line-height: 40px;
-      }
-      .drawer-list a:hover {
-        background-color: var(--paper-blue-50);
-      }
-
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }*/
-
       app-drawer {
         /*height: 100vh;*/
         --app-drawer-width: 15em;
@@ -209,7 +185,7 @@
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+        <iron-selector selected="[[page]]" attr-for-selected="name" role="navigation">
           <div class="container flex-vertical">
             <box-profile align="right" class="flexchild box-profile"></box-profile>
             <div class="icon flex-vertical">
