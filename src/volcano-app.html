@@ -90,30 +90,6 @@
         --paper-icon-button-ink-color: white;
       }
 
-      /*.drawer-list {
-        margin: 0 20px;
-      }
-
-      .drawer-list a {
-        display: block;
-
-        padding: 0 16px;
-
-        text-decoration: none;
-
-        color: var(--app-secondary-color);
-
-        line-height: 40px;
-      }
-      .drawer-list a:hover {
-        background-color: var(--paper-blue-50);
-      }
-
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }*/
-
       app-drawer {
         /*height: 100vh;*/
         --app-drawer-width: 15em;
@@ -230,7 +206,7 @@
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+        <iron-selector selected="[[page]]" attr-for-selected="name" role="navigation">
           <div class="container flex-vertical">
             <box-profile align="right" class="flexchild box-profile"></box-profile>
             <div class="icon flex-vertical">
@@ -243,9 +219,9 @@
                 <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
               </div>
               <div class="iconsetting">
-                <a name="view3" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view3" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
-                <a name="view3" href="/view3">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+                <a name="view1" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <a name="view2" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
+                <a name="page-404" href="/page-404">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
               </div>
               <div class="iconopen">
                 <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
