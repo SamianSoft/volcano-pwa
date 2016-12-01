@@ -34,7 +34,8 @@
                 console.log("Im transform header");
                 var y = window.scrollY;
                 if (y <= bgHeaderHeight) {
-                    y = 1.5 * y;
+                    y = y;
+                    // y = 1.5 * y;
                 }
                 var s = bgHeader.style;
                 s.transform = s.webkitTransform = 'translate3d(0,' + -y + 'px,0)';
