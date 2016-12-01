@@ -194,6 +194,10 @@
         transform: scale3d(0, 0, 0);
       }
 
+      box-breadcrumb {
+        margin-right: 100px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -242,7 +246,7 @@
           <app-toolbar class="flex-equal-justified layout-horizontal">
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
             <box-menu-icon on-boxmenuevent="test"></box-menu-icon>
-            <box-breadcrumb ></box-breadcrumb>
+            <box-breadcrumb></box-breadcrumb>
           </app-toolbar>
         </app-header>
 
