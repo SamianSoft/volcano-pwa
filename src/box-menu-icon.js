@@ -22,7 +22,9 @@
     }
 
     fireevent () {
-      var event = new CustomEvent('myevent');
+      var myevent = new CustomEvent("boxmenuevent");
+
+      this.dispatchEvent(myevent);
     }
   }
 
