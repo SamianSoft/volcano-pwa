@@ -34,7 +34,8 @@
                 console.log("Im transform header");
                 var y = window.scrollY;
                 if (y <= bgHeaderHeight) {
-                    y = 1.5 * y;
+                    y = y;
+                    // y = 1.5 * y;
                 }
                 var s = bgHeader.style;
                 s.transform = s.webkitTransform = 'translate3d(0,' + -y + 'px,0)';
@@ -62,8 +63,12 @@
         }
 
         _headerScroll(evt) {
-            // console.log(this.$.header.getScrollState().progress);
-            this.toggleClass('shrink-to-hidden', this.$.header.getScrollState().progress > 0.5, this.$.fabicon);
+            // console.log(this.$.header);
+            // console.log(this.$.fabicon);
+            var appHeader = this.shadowRoot.querySelector('app-header');
+            var paperfab = this.shadowRoot.querySelector('paper-fab');
+
+            paperfab.classList.toggle('shrink-to-hidden', appHeader.getScrollState().progress > 0.5);
         }
 
         _routePageChanged(page) {
