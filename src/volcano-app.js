@@ -62,8 +62,12 @@
         }
 
         _headerScroll(evt) {
-            // console.log(this.$.header.getScrollState().progress);
-            this.toggleClass('shrink-to-hidden', this.$.header.getScrollState().progress > 0.5, this.$.fabicon);
+            // console.log(this.$.header);
+            // console.log(this.$.fabicon);
+            var appHeader = this.shadowRoot.querySelector('app-header');
+            var paperfab = this.shadowRoot.querySelector('paper-fab');
+
+            paperfab.classList.toggle('shrink-to-hidden', appHeader.getScrollState().progress > 0.5);
         }
 
         _routePageChanged(page) {
