@@ -21,8 +21,28 @@
       // this.$.three.addEventListener('fireevent3', this.myEvent);
     }
 
-    fireevent () {
-      var event = new CustomEvent('myevent');
+    // onetap () {
+    //   this.fireevent(1);
+    // }
+
+    // twotap () {
+    //   this.fireevent(2);
+    // }
+
+    // threetap () {
+    //   this.fireevent(3);
+    // }
+
+    fireevent (event) {
+
+      // console.log(event.target);
+
+      var myevent = new CustomEvent("boxmenuevent", {
+        detail: {
+          iconid : event.target.id
+        }
+      });
+      this.dispatchEvent(myevent);
     }
   }
 

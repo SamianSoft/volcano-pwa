@@ -21,6 +21,7 @@
 
     ready () {
       super.ready();
+
       this.removeAttribute('unresolved');
       // var appHeader = document.querySelector('app-header');
       var appHeader = this.shadowRoot.querySelector('app-header');
@@ -45,6 +46,13 @@
       this._setHeaderScrollListener(this.$.header, this._headerScroll);
       // console. log(this._setHeaderScrollListener(appHeader, this._headerScroll));
       // console.log(this._headerScroll);
+
+      //for create new event
+      var pel = this.shadowRoot.querySelector('box-menu-icon');
+      pel.addEventListener('boxmenuevent', function(e) {
+        // console.info("Event is: ", e);
+        // console.info("Custom data is: ", e.detail);
+      });
     }
 
     _setHeaderScrollListener (header, fn) {
@@ -89,6 +97,11 @@
         // console.log(btndrawer);
         closeclass.animate();
       }
+    }
+
+    test (event) {
+      console.log(event.detail.iconid + ': test create event');
+      // console.log(event.target.shadowRoot.);
     }
   }
 
