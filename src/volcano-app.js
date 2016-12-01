@@ -21,6 +21,10 @@
 
     ready () {
       super.ready();
+
+      //for create new event
+      this.addEventListener("boxmenuevent");
+
       this.removeAttribute('unresolved');
       // var appHeader = document.querySelector('app-header');
       var appHeader = this.shadowRoot.querySelector('app-header');
