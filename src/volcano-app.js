@@ -48,7 +48,11 @@
       // console.log(this._headerScroll);
 
       //for create new event
-      // this.addEventListener("boxmenuevent");
+      var pel = this.shadowRoot.querySelector('box-menu-icon');
+      pel.addEventListener('boxmenuevent', function(e) {
+        // console.info("Event is: ", e);
+        // console.info("Custom data is: ", e.detail);
+      });
     }
 
     _setHeaderScrollListener (header, fn) {
@@ -95,8 +99,9 @@
       }
     }
 
-    test () {
-      console.log('test create event');
+    test (event) {
+      console.log(event.detail.iconid + ': test create event');
+      // console.log(event.target.shadowRoot.);
     }
   }
 
