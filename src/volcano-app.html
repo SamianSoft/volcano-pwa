@@ -241,7 +241,7 @@
         <app-header id="header" fixed>
           <app-toolbar class="flex-equal-justified layout-horizontal">
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
-            <box-menu-icon></box-menu-icon>
+            <box-menu-icon on-boxmenuevent="test"></box-menu-icon>
             <box-breadcrumb ></box-breadcrumb>
           </app-toolbar>
         </app-header>
@@ -257,7 +257,7 @@
           <page-404 name="404"></page-404>
         </iron-pages>
         <footer>
-          <box-menu-icon align="left"></box-menu-icon>
+          <box-menu-icon align="left" on-boxmenuevent="test"></box-menu-icon>
         </footer>
       </app-header-layout>
     </app-drawer-layout>
