@@ -41,8 +41,8 @@
         console.log("Im transform header");
         var y = window.scrollY;
         if (y <= bgHeaderHeight) {
-        y = y;
-        // y = 1.5 * y;
+          y = y;
+          // y = 1.5 * y;
         }
         var s = bgHeader.style;
         s.transform = s.webkitTransform = 'translate3d(0,' + -y + 'px,0)';
@@ -59,8 +59,8 @@
       //for create new event
       var pel = this.shadowRoot.querySelector('box-menu-icon');
       pel.addEventListener('boxmenuevent', function(e) {
-      // console.info("Event is: ", e);
-      // console.info("Custom data is: ", e.detail);
+        // console.info("Event is: ", e);
+        // console.info("Custom data is: ", e.detail);
       });
     }
 
