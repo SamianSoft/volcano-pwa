@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html" />
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
+<link rel="import" href="../bower_components/iron-image/iron-image.html"/>
+<link rel="import" href="app-icons.html" />
+
+<dom-module id="box-profile">
+  <template>
+    <style>
+
+    .profile-img {
+      /*background-color: #fff;*/
+      --iron-image-width: 50px;
+      --iron-image-height: 50px;
+      /*width: 50px;*/
+      /*height: 50px;*/
+      border-radius: 100%;
+      margin-bottom: 5px;
+    }
+
+    :host{
+      display: block;
+    }
+
+    :host .container {
+      @apply --box-profile;
+    }
+
+    </style>
+
+    <div align="right" class="container">
+      <div>
+        <!--<img src="/../images/profile-pic.png" class="profile-img"/>-->
+        <iron-image src="/../images/profile-pic.png" class="profile-img"></iron-image>
+      </div>
+      <span>علی رمضانی</span>
+    </div>
+  </template>
+
+  <script type="text/javascript" src="box-profile.js"></script>
+</dom-module>
