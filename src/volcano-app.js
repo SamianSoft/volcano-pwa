@@ -97,11 +97,15 @@
     _closedraw() {
       var closeclass = this.shadowRoot.querySelector('app-drawer');
       var btndrawer = this.shadowRoot.querySelector('#btndrawer');
+      var ahl = this.shadowRoot.querySelector('app-header-layout');
+      var docw = document.body.offsetWidth;
 
       if (closeclass.classList.contains('close')) {
         closeclass.classList.remove('close');
         btndrawer.classList.remove('iconclose');
         btndrawer.classList.add('iconopen');
+        //btndrawer.classList.add('iconclose');
+        ahl.style.width = Number(docw - closeclass.offsetWidth) + 'px';
         // console.log(btndrawer);
         closeclass.animate();
       }
@@ -109,6 +113,7 @@
         closeclass.classList.add('close');
         btndrawer.classList.remove('iconopen');
         btndrawer.classList.add('iconclose');
+        ahl.style.width = Number(docw - closeclass.offsetWidth) + 'px';
         // console.log(btndrawer);
         closeclass.animate();
       }

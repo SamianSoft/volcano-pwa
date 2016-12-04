@@ -27,7 +27,7 @@
 <link rel="import" href="page-404.html" />
 
 <dom-module id="volcano-app">
-    <template>
+  <template>
     <style>
       :host {
         --app-primary-color: #4285f4;
@@ -62,6 +62,7 @@
       .flex-equal-justified {
         @apply --layout-justified;
       }
+
 
       .bg-header {
         position: fixed;
@@ -174,9 +175,9 @@
         margin: 0 auto;
       }
 
-      .flex{
+      /*.flex{
         display: flex;
-      }
+      }*/
 
       /* fab icon*/
       paper-fab {
@@ -192,6 +193,10 @@
       paper-fab.shrink-to-hidden {
         -webkit-transform: scale3d(0, 0, 0);
         transform: scale3d(0, 0, 0);
+      }
+
+      box-breadcrumb {
+        margin-right: 100px;
       }
 
     </style>
@@ -235,14 +240,14 @@
       <!-- Main content -->
       <paper-fab icon="add" id="fabicon"></paper-fab>
 
-      <app-header-layout class="flexchild">
+      <app-header-layout>
         <div class="bg-header"></div>
 
         <app-header id="header" fixed>
           <app-toolbar class="flex-equal-justified layout-horizontal">
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
             <box-menu-icon on-boxmenuevent="test"></box-menu-icon>
-            <box-breadcrumb ></box-breadcrumb>
+            <box-breadcrumb></box-breadcrumb>
           </app-toolbar>
         </app-header>
 
@@ -263,5 +268,5 @@
     </app-drawer-layout>
   </template>
 
-    <script type="text/javascript" src="volcano-app.js"></script>
+  <script type="text/javascript" src="volcano-app.js"></script>
 </dom-module>
