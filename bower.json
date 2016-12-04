@@ -17,7 +17,8 @@
     "polymer": "Polymer/polymer#2.0-preview",
     "neon-animation": "PolymerElements/neon-animation#2.0-preview",
     "web-animations-js": "web-animations/web-animations-js#^2.2.2",
-    "iron-image": "PolymerElements/iron-image#2.0-preview"
+    "iron-image": "PolymerElements/iron-image#2.0-preview",
+    "paper-fab": "PolymerElements/paper-fab#2.0-preview"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
