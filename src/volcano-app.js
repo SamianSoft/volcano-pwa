@@ -31,55 +31,22 @@
       //remove frist loading style
       this.removeAttribute('unresolved');
 
-      // var appHeader = document.querySelector('app-header');
-      var appHeader = this.shadowRoot.querySelector('app-header');
-      // var bgHeader = document.querySelector('.bg-header');
-      var bgHeader = this.shadowRoot.querySelector('.bg-header');
-
-      var appHeaderHeight = appHeader.offsetHeight;
-      var bgHeaderHeight = bgHeader.offsetHeight;
-
-      //for scroll header
-      var transformBgHeader = function () {
-        console.log("Im transform header");
-        var y = window.scrollY;
-        if (y <= bgHeaderHeight) {
-          y = y;
-          // y = 1.5 * y;
-        }
-        var s = bgHeader.style;
-        s.transform = s.webkitTransform = 'translate3d(0,' + -y + 'px,0)';
-        appHeader.shadow = y > bgHeaderHeight - appHeaderHeight;
-      }
-
-      transformBgHeader();
-      window.addEventListener('scroll', transformBgHeader);
-
-      this._setHeaderScrollListener(this.$.header, this._headerScroll);
-      // console. log(this._setHeaderScrollListener(appHeader, this._headerScroll));
-      // console.log(this._headerScroll);
-
-      //for create new event
-      var pel = this.shadowRoot.querySelector('box-menu-icon');
-      pel.addEventListener('boxmenuevent', function(e) {
-        // console.info("Event is: ", e);
-        // console.info("Custom data is: ", e.detail);
-      });
+      this._setHeaderScrollListener(this.$.appHeader, this._onHeaderScroll);
     }
 
     _setHeaderScrollListener(header, fn) {
-      var target = (header.scrollTarget === this.ownerDocument.documentElement) ? window : header.scrollTarget;
+      let target = (header.scrollTarget === this.ownerDocument.documentElement) ? window : header.scrollTarget;
       target.addEventListener('scroll', fn.bind(this), { passive: true });
+      //TODO: add passive polyfill
     }
 
-    //for toggle class header add custom style
-    _headerScroll(evt) {
-      // console.log(this.$.header);
-      // console.log(this.$.fabicon);
-      var appHeader = this.shadowRoot.querySelector('app-header');
-      var paperfab = this.shadowRoot.querySelector('paper-fab');
+    _onHeaderScroll () {
+      let y = window.scrollY;
+      y *= 1.5;
 
-      paperfab.classList.toggle('shrink-to-hidden', appHeader.getScrollState().progress > 0.5);
+      // header background scroll effect
+      this.$.bgHeader.style['transform'] = this.$.bgHeader.style['webkitTransform'] = `translate3d(0, ${-y}px, 0)`;
+      this.$.appHeader.shadow = (y > this.$.bgHeader.offsetHeight -  this.$.appHeader.offsetHeight);
     }
 
     _routePageChanged(page) {
