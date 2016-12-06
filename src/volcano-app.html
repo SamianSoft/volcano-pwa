@@ -113,6 +113,10 @@
         background-color: var(--paper-blue-50);
       }
 
+      app-drawer a.selected {
+        font-weight: bold;
+      }
+
       footer {
         /*height: 40px;*/
         position: fixed;
@@ -211,22 +215,25 @@
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
-        <iron-selector selected="[[page]]" attr-for-selected="name" role="navigation">
           <div class="container flex-vertical">
             <box-profile align="right" class="flexchild box-profile"></box-profile>
             <div class="icon flex-vertical">
               <div class="iconpage flexchild">
-                <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-                <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view1" href="/view1">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view2" href="/view2">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view3" href="/view3">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
+                  <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
+                  <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                  <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                  <a name="view4" href="/view4">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                  <a name="view5" href="/view5">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                  <a name="view6" href="/view6">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                </iron-selector>
               </div>
               <div class="iconsetting">
-                <a name="view1" href="/view1">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                <a name="view2" href="/view2">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
-                <a name="page-404" href="/page-404">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+                <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
+                  <a name="view7" href="/view7">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
+                  <a name="view8" href="/view8">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
+                  <a name="page-404" href="/page-404">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
+                </iron-selector>
               </div>
               <div class="iconopen">
                 <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
@@ -234,7 +241,6 @@
               </div>
             </div>
           </div>
-        </iron-selector>
       </app-drawer>
 
       <!-- Main content -->
