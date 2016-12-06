@@ -7,8 +7,6 @@
     static get config () {
       return {
         properties: {
-
-          //this change pages
           page: {
             type: String,
             reflectToAttribute: true,
@@ -19,7 +17,12 @@
         observers: [
           '_routePageChanged(routeData.page)'
         ],
-      }
+      };
+    }
+
+    constructor () {
+      super();
+      this.defaultPage = 'view1';
     }
 
     ready () {
@@ -80,18 +83,20 @@
     }
 
     _routePageChanged(page) {
-      this.page = page || 'view1';
+      this.page = page || this.defaultPage;
     }
 
     _pageChanged(page) {
+      // TODO: Lazy loading in polymer 2.0
       // Load page import on demand. Show 404 page if fails
       // var resolvedPageUrl = this.resolveUrl('page-' + page + '.html');
       // Polymer.Utils.importHref(resolvedPageUrl, null, () => this._showPage404(), true);
     }
-
+    /*
     _showPage404() {
       this.page = '404';
     }
+    */
 
     //this function for close app drawer
     _closedraw() {
