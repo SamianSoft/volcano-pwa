@@ -99,7 +99,7 @@
         }
       }
 
-      app-drawer a {
+      app-drawer paper-item {
         text-decoration: none;
         color: var(--app-secondary-color);
         display: block;
@@ -109,7 +109,7 @@
         margin-right: 18px;
       }
 
-      app-drawer a:hover {
+      app-drawer paper-item:hover {
         background-color: var(--paper-blue-50);
       }
 
@@ -140,7 +140,7 @@
         margin-left: 10px;
       }
 
-      .close, .close a {
+      .close, .close paper-item {
         --app-drawer-width: 90px;
         font-size: 0;
         transition: transform 3s;
@@ -219,7 +219,16 @@
           <box-profile></box-profile>
         </div>
         <div class="app-drawer_menu">
-          <paper-menu>
+          <paper-menu selected="{{page}}" attr-for-selected="name">
+            <paper-item name="main">صفحه اصلی</paper-item>
+            <paper-item name="about">کاربران</paper-item>
+            <paper-item name="list-icon">گزارش ها</paper-item>
+            <paper-item name="map-marker">مشتریان</paper-item>
+            <paper-item name="map-poly">کالاها</paper-item>
+            <paper-item name="chart">فرم ها</paper-item>
+            <paper-item name="brand">تنظیمات</paper-item>
+            <paper-item name="product">پشتیبانی</paper-item>
+            <paper-item name="product">خروج</paper-item>
           </paper-menu>
         </div>
         <div></div>
