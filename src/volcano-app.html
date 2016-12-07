@@ -92,26 +92,101 @@
       }
 
       app-drawer {
-        /*height: 100vh;*/
         --app-drawer-width: 15em;
         --app-drawer-content-container: {
           background-color: var(--paper-blue-100);
         }
       }
 
-      app-drawer paper-item {
-        text-decoration: none;
+      .app-drawer_minimal {
+        padding: 16px 25px;
+      }
+
+      .iconopen {
+        /*text-align: left;*/
+        float: left;
+        transform: rotate(360deg);
+      }
+
+      .iconclose {
+        float: right;
+        margin-right: 6px;
+        transform: rotate(180deg);
+      }
+
+      .close .pin {
+        display: none;
+      }
+
+      .app-drawer_profile {
+        padding: 16px 25px;
+        --box-profile: {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
+      box-profile {
+        margin-top: 20px;
+      }
+
+      .close box-profile {
+        --box-profile: {
+          font-size: 0;
+        }
+      }
+
+      .app-drawer_menu {
+        margin-top: 5px;
+      }
+
+      paper-menu paper-item {
         color: var(--app-secondary-color);
         display: block;
+        padding: 6px 22px;
       }
 
-      app-drawer paper-icon-button {
-        margin-right: 18px;
-      }
-
-      app-drawer paper-item:hover {
+      paper-item:hover {
         background-color: var(--paper-blue-50);
       }
+
+      paper-item iron-icon {
+        margin-left: 16px;
+      }
+
+      .margin-item {
+        margin-top: 50px;
+      }
+
+      .close {
+        --app-drawer-width: 100px;
+      }
+
+      .close paper-item {
+        font-size: 0;
+      }
+
+      .close iron-icon {
+        margin-right: 15px;
+      }
+
+
+
+      /*app-drawer {
+        outline: 1px solid black;
+      }
+
+      app-drawer > * {
+        outline: 2px solid yellow;
+      }
+
+      app-drawer > * > * {
+        outline: 3px solid green;
+      }
+
+      app-drawer > * > * > * {
+        outline: 1px solid blue;
+      }*/
 
       footer {
         /*height: 40px;*/
@@ -126,58 +201,6 @@
           height: 35px;
         }
       }
-
-      .box-profile {
-        --box-profile: {
-          padding: 10px;
-          font-size: 20px;
-          margin: 0 18px 18px 0;
-          font-weight: bold;
-        }
-      }
-
-      .icon paper-icon-button {
-        margin-left: 10px;
-      }
-
-      .close, .close paper-item {
-        --app-drawer-width: 90px;
-        font-size: 0;
-        transition: transform 3s;
-      }
-
-      .close paper-icon-button {
-        margin: 0 24px;
-      }
-
-      .close .pin {
-        display: none;
-      }
-
-      .close box-profile {
-        margin: 0;
-        padding: 0;
-        --box-profile: {
-          font-size: 0;
-          margin: 10px 18px;
-        }
-      }
-
-      .iconopen {
-        text-align: left;
-        float: left;
-        transform: rotate(360deg);
-      }
-
-      .iconclose {
-        margin-right: 16px;
-        transform: rotate(180deg);
-        margin: 0 auto;
-      }
-
-      /*.flex{
-        display: flex;
-      }*/
 
       /* fab icon*/
       paper-fab {
@@ -210,16 +233,16 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer align="right" slot="drawer">
+      <app-drawer align="end" slot="drawer">
         <div class="app-drawer_minimal">
-          <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
-          <paper-icon-button class="pin" icon="help-outline"></paper-icon-button>
+          <paper-icon-button class="iconopen" id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+          <paper-icon-button class="iconopen pin" icon="help-outline"></paper-icon-button>
         </div>
         <div class="app-drawer_profile">
-          <box-profile></box-profile>
+          <box-profile class="box-profile"></box-profile>
         </div>
         <div class="app-drawer_menu">
-          <paper-menu selected="{{page}}" attr-for-selected="name">
+          <paper-menu class="" selected="{{page}}" attr-for-selected="name">
             <paper-item name="main">صفحه اصلی
               <iron-icon icon="home" ></iron-icon>
             </paper-item>
@@ -238,7 +261,7 @@
             <paper-item name="chart">فرم ها
               <iron-icon icon="help-outline" ></iron-icon>
             </paper-item>
-            <paper-item name="brand">تنظیمات
+            <paper-item class="margin-item" name="brand">تنظیمات
               <iron-icon icon="help-outline" ></iron-icon>
             </paper-item>
             <paper-item name="product">پشتیبانی
