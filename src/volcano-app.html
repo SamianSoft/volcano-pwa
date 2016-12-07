@@ -1,22 +1,31 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html"/>
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html"/>
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html"/>
-<link rel="import" href="../bower_components/app-layout/app-header/app-header.html"/>
-<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html"/>
-<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html"/>
-<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html"/>
-<link rel="import" href="../bower_components/app-route/app-location.html"/>
-<link rel="import" href="../bower_components/app-route/app-route.html"/>
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html"/>
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html"/>
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html"/>
-<link rel="import" href="app-icons.html"/>
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html" />
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html" />
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html" />
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html" />
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html" />
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html" />
+<link rel="import" href="../bower_components/app-route/app-location.html" />
+<link rel="import" href="../bower_components/app-route/app-route.html" />
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html" />
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html" />
+<link rel="import" href="../bower_components/paper-styles/color.html" />
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html" />
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />
+<link rel="import" href="../bower_components/paper-item/paper-item.html" />
+
+<link rel="import" href="app-icons.html" />
 
 <!-- Temporary disable lazy load until polymer 2.0 released. -->
-<link rel="import" href="page-view1.html"/>
-<link rel="import" href="page-view2.html"/>
-<link rel="import" href="page-view3.html"/>
-<link rel="import" href="page-404.html"/>
+<link rel="import" href="box-profile.html" />
+<link rel="import" href="box-breadcrumb.html" />
+<link rel="import" href="box-menu-icon.html" />
+<link rel="import" href="page-view1.html" />
+<link rel="import" href="page-view2.html" />
+<link rel="import" href="page-view3.html" />
+<link rel="import" href="page-404.html" />
 
 <dom-module id="volcano-app">
   <template>
@@ -30,76 +39,250 @@
         cursor: default;
       }
 
-      app-header {
-        color: #fff;
+      .flex-vertical {
+        @apply(--layout-vertical);
+        height: 100vh;
+      }
+
+      .flexchild {
+        @apply(--layout-flex);
+      }
+
+      .layout-horizontal {
+        @apply(--layout-horizontal);
+      }
+
+      .flex-end-justified {
+        @apply(--layout-end-justified);
+      }
+
+      .flex-start-justified {
+        @apply(--layout-start-justified);
+      }
+
+      .flex-equal-justified {
+        @apply --layout-justified;
+      }
+
+      #bgHeader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 15em;
         background-color: var(--app-primary-color);
+        z-index: -1;
+      }
+
+      app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #4285f4;
+        color: #fff;
+        --app-header-shadow: {
+          transition: none;
+        };
       }
 
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
 
-      .drawer-list {
-        margin: 0 20px;
+      app-drawer {
+        --app-drawer-width: 15em;
+        --app-drawer-content-container: {
+          background-color: var(--paper-blue-100);
+        }
       }
 
-      .drawer-list a {
-        display: block;
-
-        padding: 0 16px;
-
-        text-decoration: none;
-
-        color: var(--app-secondary-color);
-
-        line-height: 40px;
+      .app-drawer_minimal {
+        padding: 16px 25px;
       }
 
-      .drawer-list a.iron-selected {
-        color: black;
+      .iconopen {
+        /*text-align: left;*/
+        float: left;
+        transform: rotate(360deg);
+      }
 
+      .iconclose {
+        float: right;
+        margin-right: 6px;
+        transform: rotate(180deg);
+      }
+
+      .close .pin {
+      	display: none;
+      }
+
+      paper-menu paper-item.selected {
         font-weight: bold;
       }
+
+      .app-drawer_profile {
+        padding: 16px 25px;
+        --box-profile: {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
+      box-profile {
+        margin-top: 20px;
+      }
+
+      .close box-profile {
+        --box-profile: {
+          font-size: 0;
+        }
+      }
+
+      .app-drawer_menu {
+        margin-top: 5px;
+      }
+
+      paper-menu paper-item {
+        color: var(--app-secondary-color);
+        display: block;
+        padding: 6px 22px;
+      }
+
+      paper-item:hover {
+        background-color: var(--paper-blue-50);
+      }
+
+      paper-item iron-icon {
+        margin-left: 16px;
+      }
+
+      .margin-item {
+        margin-top: 50px;
+      }
+
+      .close {
+        --app-drawer-width: 100px;
+      }
+
+      .close paper-item {
+        font-size: 0;
+      }
+
+      .close iron-icon {
+        margin-right: 15px;
+      }
+
+      /*app-drawer {
+        outline: 1px solid black;
+      }
+
+      app-drawer > * {
+        outline: 2px solid yellow;
+      }
+
+      app-drawer > * > * {
+        outline: 3px solid green;
+      }
+
+      app-drawer > * > * > * {
+        outline: 1px solid blue;
+      }*/
+
+      footer {
+        /*height: 40px;*/
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        background-color: white;
+        --paper-icon-button: {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      /* fab icon*/
+      paper-fab {
+        position: absolute;
+        left: .5em;
+        top: 5.6em;
+        z-index: 2;
+        will-change: transform;
+        transition: 0.2s -webkit-transform;
+        transition: 0.2s transform;
+      }
+
+      paper-fab.shrink-to-hidden {
+        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
+      }
+
+      box-breadcrumb {
+        margin-right: 100px;
+      }
+
     </style>
 
     <app-location route="{{route}}"></app-location>
     <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+      route="{{route}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}"></app-route>
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer slot="drawer">
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
-        </iron-selector>
+      <app-drawer align="end" slot="drawer">
+        <div class="app-drawer_minimal">
+          <paper-icon-button class="iconopen" id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+          <paper-icon-button class="iconopen pin" icon="help-outline"></paper-icon-button>
+        </div>
+        <div class="app-drawer_profile">
+          <box-profile class="box-profile"></box-profile>
+        </div>
+        <div class="app-drawer_menu">
+          <paper-menu selected="{{page}}" attr-for-selected="name" selected-class="selected">
+            <paper-item name="view1">صفحه اصلی<iron-icon icon="home"></iron-icon></paper-item>
+            <paper-item name="view2">کاربران<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view4">مشتریان<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view5">کالاها<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view6">فرم ها<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></paper-item>
+            <paper-item name="view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></paper-item>
+            <paper-item name="view9">خروج<iron-icon icon="power-settings-new"></iron-icon></paper-item>
+          </paper-menu>
+        </div>
+        <div></div>
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout>
+        <div id="bgHeader"></div>
 
-        <app-header slot="header" condenses reveals effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div main-title>Volcano App</div>
+        <app-header id="appHeader" fixed>
+          <app-toolbar class="flex-equal-justified layout-horizontal">
+            <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
+            <box-menu-icon on-boxmenuevent="test"></box-menu-icon>
+            <box-breadcrumb></box-breadcrumb>
           </app-toolbar>
         </app-header>
 
         <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="404"
-            role="main">
+          selected="[[page]]"
+          attr-for-selected="name"
+          fallback-selection="404"
+          role="main">
           <page-view1 name="view1"></page-view1>
           <page-view2 name="view2"></page-view2>
           <page-view3 name="view3"></page-view3>
           <page-404 name="404"></page-404>
         </iron-pages>
+        <footer>
+          <box-menu-icon align="left" on-boxmenuevent="test"></box-menu-icon>
+        </footer>
       </app-header-layout>
     </app-drawer-layout>
   </template>
