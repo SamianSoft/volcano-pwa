@@ -13,8 +13,10 @@
 <link rel="import" href="../bower_components/paper-styles/color.html" />
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html" />
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
-<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />
-<link rel="import" href="../bower_components/paper-item/paper-item.html" />
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
+
+<!--<!--<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />-->
+<!--<link rel="import" href="../bower_components/paper-item/paper-item.html" />-->-->
 
 <link rel="import" href="app-icons.html" />
 
@@ -117,7 +119,7 @@
         display: none;
       }
 
-      paper-menu paper-item.selected {
+      iron-selector paper-item.selected {
         font-weight: bold;
       }
 
@@ -143,7 +145,7 @@
         margin-top: 5px;
       }
 
-      paper-menu paper-item {
+      iron-selector paper-item {
         color: var(--app-secondary-color);
         display: block;
         padding: 6px 22px;
@@ -243,7 +245,7 @@
           <box-profile class="box-profile"></box-profile>
         </div>
         <div class="app-drawer_menu">
-          <paper-menu selected="{{page}}" attr-for-selected="name" selected-class="selected">
+          <iron-selector selected="{{page}}" attr-for-selected="name" selected-class="selected">
             <paper-item name="view1">صفحه اصلی<iron-icon icon="home"></iron-icon></paper-item>
             <paper-item name="view2">کاربران<iron-icon icon="help-outline"></iron-icon></paper-item>
             <paper-item name="view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></paper-item>
@@ -253,7 +255,7 @@
             <paper-item name="view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></paper-item>
             <paper-item name="view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></paper-item>
             <paper-item name="view9">خروج<iron-icon icon="power-settings-new"></iron-icon></paper-item>
-          </paper-menu>
+          </iron-selector>
         </div>
         <div></div>
       </app-drawer>
