@@ -211,10 +211,19 @@
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer align="right" slot="drawer">
+        <div class="app-drawer_minimal">
+          <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+          <paper-icon-button class="pin" icon="help-outline"></paper-icon-button>
+        </div>
+        <div class="app-drawer_profile">
+          <box-profile></box-profile>
+        </div>
+        <div class="app-drawer_menu">
+          <paper-menu>
+          </paper-menu>
+        </div>
+        <div></div>
       </app-drawer>
-
-      <!--<paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
-      <paper-icon-button class="pin" icon="help-outline"></paper-icon-button>-->
 
       <!-- Main content -->
       <paper-fab icon="add" id="fabicon"></paper-fab>
