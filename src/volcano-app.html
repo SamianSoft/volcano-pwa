@@ -119,7 +119,7 @@
         display: none;
       }
 
-      iron-selector paper-item.selected {
+      iron-selector a.selected {
         font-weight: bold;
       }
 
@@ -145,17 +145,17 @@
         margin-top: 5px;
       }
 
-      iron-selector paper-item {
+      iron-selector a {
         color: var(--app-secondary-color);
         display: block;
         padding: 6px 22px;
       }
 
-      paper-item:hover {
+      a:hover {
         background-color: var(--paper-blue-50);
       }
 
-      paper-item iron-icon {
+      a iron-icon {
         margin-left: 16px;
       }
 
@@ -167,7 +167,7 @@
         --app-drawer-width: 100px;
       }
 
-      .close paper-item {
+      .close a {
         font-size: 0;
       }
 
@@ -246,15 +246,15 @@
         </div>
         <div class="app-drawer_menu">
           <iron-selector selected="{{page}}" attr-for-selected="name" selected-class="selected">
-            <paper-item name="view1">صفحه اصلی<iron-icon icon="home"></iron-icon></paper-item>
-            <paper-item name="view2">کاربران<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view4">مشتریان<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view5">کالاها<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view6">فرم ها<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></paper-item>
-            <paper-item name="view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></paper-item>
-            <paper-item name="view9">خروج<iron-icon icon="power-settings-new"></iron-icon></paper-item>
+            <a name="view1">صفحه اصلی<iron-icon icon="home"></iron-icon></a>
+            <a name="view2">کاربران<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view4">مشتریان<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view5">کالاها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view6">فرم ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></a>
+            <a name="view9">خروج<iron-icon icon="power-settings-new"></iron-icon></a>
           </iron-selector>
         </div>
         <div></div>
