@@ -62,15 +62,13 @@
         @apply --layout-justified;
       }
 
-
-      .bg-header {
+      #bgHeader {
         position: fixed;
-        top: 0px;
+        top: 0;
         left: 0;
-        width: 100%;
-        height: 30vh;
+        right: 0;
+        height: 15em;
         background-color: var(--app-primary-color);
-        color: #fff;
         z-index: -1;
       }
 
@@ -114,7 +112,11 @@
       }
 
       .close .pin {
-        display: none;
+      	display: none;
+      }
+      
+      app-drawer a.selected {
+        font-weight: bold;
       }
 
       .app-drawer_profile {
@@ -275,12 +277,10 @@
       </app-drawer>
 
       <!-- Main content -->
-      <paper-fab icon="add" id="fabicon"></paper-fab>
-
       <app-header-layout>
-        <div class="bg-header"></div>
+        <div id="bgHeader"></div>
 
-        <app-header id="header" fixed>
+        <app-header id="appHeader" fixed>
           <app-toolbar class="flex-equal-justified layout-horizontal">
             <!--<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>-->
             <box-menu-icon on-boxmenuevent="test"></box-menu-icon>
