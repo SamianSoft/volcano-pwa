@@ -15,8 +15,8 @@
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
 
-<!--<!--<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />-->
-<!--<link rel="import" href="../bower_components/paper-item/paper-item.html" />-->-->
+<!--<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />-->
+<!--<link rel="import" href="../bower_components/paper-item/paper-item.html" />-->
 
 <link rel="import" href="app-icons.html" />
 
@@ -149,6 +149,7 @@
         color: var(--app-secondary-color);
         display: block;
         padding: 6px 22px;
+        text-decoration: none;
       }
 
       a:hover {
@@ -246,15 +247,15 @@
         </div>
         <div class="app-drawer_menu">
           <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
-            <a name="view1">صفحه اصلی<iron-icon icon="home"></iron-icon></a>
-            <a name="view2">کاربران<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view4">مشتریان<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view5">کالاها<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view6">فرم ها<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></a>
-            <a name="view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></a>
-            <a name="view9">خروج<iron-icon icon="power-settings-new"></iron-icon></a>
+            <a name="view1" href="/view1">صفحه اصلی<iron-icon icon="home"></iron-icon></a>
+            <a name="view2" href="/view2">کاربران<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view3" href="/view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view4" href="/view4">مشتریان<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view5" href="/view5">کالاها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view6" href="/view6">فرم ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view7" href="/view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view8" href="/view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></a>
+            <a name="view9" href="/view9">خروج<iron-icon icon="power-settings-new"></iron-icon></a>
           </iron-selector>
         </div>
         <div></div>
