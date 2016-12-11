@@ -1,19 +1,14 @@
 (function () {
   'use strict';
 
-  class BoxProfile extends Polymer.Element {
-    static get is() { return 'box-profile'; }
+  Polymer({
+    is: 'box-profile',
 
-    static get config () {
-      return {
-        properties: {
-        },
-        observers: [
-        ]
-      };
-    }
-  }
+    // properties: {
+    // },
 
-  customElements.define(BoxProfile.is, BoxProfile);
+    // observers: [
+    // ],
 
+  })
 })();

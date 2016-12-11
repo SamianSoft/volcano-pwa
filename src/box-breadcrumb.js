@@ -1,19 +1,14 @@
 (function () {
   'use strict';
 
-  class BoxBreadcrumb extends Polymer.Element {
-    static get is() { return 'box-breadcrumb'; }
+  Polymer({
+    is: 'box-breadcrumb',
 
-    static get config () {
-      return {
-        properties: {
-        },
-        observers: [
-        ]
-      };
-    }
-  }
+    // properties: {
+    // },
 
-  customElements.define(BoxBreadcrumb.is, BoxBreadcrumb);
+    // observers: [
+    // ]
+  });
 
-})();
+});

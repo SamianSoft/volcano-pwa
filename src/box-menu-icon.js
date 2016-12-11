@@ -1,40 +1,16 @@
 (function () {
   'use strict';
 
-  class BoxMenuIcon extends Polymer.Element {
-    static get is() { return 'box-menu-icon'; }
+  Polymer({
+    is : 'box-menu-icon',
 
-    static get config () {
-      return {
-        properties: {
-          // myEvent: String,
-        },
-        observers: [
-        ]
-      };
-    }
+    // properties: {
+    // },
 
-    ready () {
-      super.ready();
-      // this.$.one.addEventListener('fireevent1', this.myEvent);
-      // this.$.two.addEventListener('fireevent2', this.myEvent);
-      // this.$.three.addEventListener('fireevent3', this.myEvent);
-    }
+    // observers: [
+    // ],
 
-    // onetap () {
-    //   this.fireevent(1);
-    // }
-
-    // twotap () {
-    //   this.fireevent(2);
-    // }
-
-    // threetap () {
-    //   this.fireevent(3);
-    // }
-
-    fireevent (event) {
-
+    fireevent: function (event) {
       // console.log(event.target);
 
       var myevent = new CustomEvent("boxmenuevent", {
@@ -44,8 +20,5 @@
       });
       this.dispatchEvent(myevent);
     }
-  }
-
-  customElements.define(BoxMenuIcon.is, BoxMenuIcon);
-
+  })
 })();
