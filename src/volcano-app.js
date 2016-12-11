@@ -1,76 +1,65 @@
 (function() {
   'use strict';
 
-  class VolcanoApp extends Polymer.Element {
-    static get is () { return 'volcano-app'; }
+  let defaultPage = 'view1';
 
-    static get config () {
-      return {
-        properties: {
-          page: {
-            type: String,
-            reflectToAttribute: true,
-            observer: '_pageChanged'
-          }
-        },
+  Polymer({
+    is: 'volcano-app',
 
-        observers: [
-          '_routePageChanged(routeData.page)'
-        ],
-      };
-    }
+    properties: {
+      page: {
+        type: String,
+        reflectToAttribute: true,
+        observer: '_pageChanged'
+      }
+    },
 
-    constructor () {
-      super();
-      this.defaultPage = 'view1';
-    }
+    observers: [
+      '_routePageChanged(routeData.page)'
+    ],
 
-    ready () {
-      super.ready();
-
+    ready: function () {
       //remove frist loading style
       this.removeAttribute('unresolved');
 
       this._setHeaderScrollListener(this.$.appHeader, this._onHeaderScroll);
-    }
+    },
 
-    _setHeaderScrollListener(header, fn) {
+    _setHeaderScrollListener: function (header, fn) {
       let target = (header.scrollTarget === this.ownerDocument.documentElement) ? window : header.scrollTarget;
       target.addEventListener('scroll', fn.bind(this), { passive: true });
       //TODO: add passive polyfill
-    }
+    },
 
-    _onHeaderScroll () {
+    _onHeaderScroll: function () {
       let y = window.scrollY;
       y *= 1.5;
 
       // header background scroll effect
       this.$.bgHeader.style['transform'] = this.$.bgHeader.style['webkitTransform'] = `translate3d(0, ${-y}px, 0)`;
       this.$.appHeader.shadow = (y > this.$.bgHeader.offsetHeight -  this.$.appHeader.offsetHeight);
-    }
+    },
 
-    _routePageChanged(page) {
-      this.page = page || this.defaultPage;
-    }
+    _routePageChanged: function (page) {
+      this.page = page || defaultPage;
+    },
 
-    _pageChanged(page) {
+    _pageChanged: function (page) {
       // TODO: Lazy loading in polymer 2.0
       // Load page import on demand. Show 404 page if fails
       // var resolvedPageUrl = this.resolveUrl('page-' + page + '.html');
       // Polymer.Utils.importHref(resolvedPageUrl, null, () => this._showPage404(), true);
-    }
-    /*
-    _showPage404() {
-      this.page = '404';
-    }
-    */
+    },
 
-    //this function for close app drawer
-    _closedraw() {
-      var closeclass = this.shadowRoot.querySelector('app-drawer');
-      var btndrawer = this.shadowRoot.querySelector('#btndrawer');
-      var ahl = this.shadowRoot.querySelector('app-header-layout');
-      var docw = document.body.offsetWidth;
+    _showPage404: function () {
+      this.page = '404';
+    },
+
+    _closedraw: function () {
+      let closeclass = this.$$('app-drawer');
+      let btndrawer = this.$.btndrawer;
+      let ahl = this.$$('app-header-layout');
+      let docw = window.innerWidth;
 
       if (closeclass.classList.contains('close')) {
         closeclass.classList.remove('close');
@@ -79,8 +68,7 @@
         //btndrawer.classList.add('iconclose');
         ahl.style.width = Number(docw - closeclass.offsetWidth) + 'px';
         // console.log(btndrawer);
-      }
-      else {
+      } else {
         closeclass.classList.add('close');
         btndrawer.classList.remove('iconopen');
         btndrawer.classList.add('iconclose');
@@ -88,13 +76,6 @@
         // console.log(btndrawer);
       }
     }
+  });
 
-    //for test custom event
-    test(event) {
-      console.log(event.detail.iconid + ': test create event');
-      // console.log(event.target.shadowRoot.);
-    }
-  }
-
-  customElements.define(VolcanoApp.is, VolcanoApp);
 })();
