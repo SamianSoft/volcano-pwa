@@ -79,7 +79,6 @@
         //btndrawer.classList.add('iconclose');
         ahl.style.width = Number(docw - closeclass.offsetWidth) + 'px';
         // console.log(btndrawer);
-        closeclass.animate();
       }
       else {
         closeclass.classList.add('close');
@@ -87,7 +86,6 @@
         btndrawer.classList.add('iconclose');
         ahl.style.width = Number(docw - closeclass.offsetWidth) + 'px';
         // console.log(btndrawer);
-        closeclass.animate();
       }
     }
 

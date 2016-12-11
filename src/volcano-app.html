@@ -8,12 +8,15 @@
 <link rel="import" href="../bower_components/app-route/app-location.html" />
 <link rel="import" href="../bower_components/app-route/app-route.html" />
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html" />
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html" />
 <link rel="import" href="../bower_components/paper-styles/color.html" />
-<link rel="import" href="../bower_components/neon-animation/web-animations.html" />
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html" />
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html" />
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html" />
+
+<!--<link rel="import" href="../bower_components/paper-menu/paper-menu.html" />-->
+<!--<link rel="import" href="../bower_components/paper-item/paper-item.html" />-->
 
 <link rel="import" href="app-icons.html" />
 
@@ -90,30 +93,104 @@
       }
 
       app-drawer {
-        /*height: 100vh;*/
         --app-drawer-width: 15em;
         --app-drawer-content-container: {
           background-color: var(--paper-blue-100);
         }
       }
 
-      app-drawer a {
-        text-decoration: none;
+      .app-drawer_minimal {
+        padding: 16px 25px;
+      }
+
+      .iconopen {
+        /*text-align: left;*/
+        float: left;
+        transform: rotate(360deg);
+      }
+
+      .iconclose {
+        float: right;
+        margin-right: 6px;
+        transform: rotate(180deg);
+      }
+
+      .close .pin {
+        display: none;
+      }
+
+      iron-selector a.selected {
+        font-weight: bold;
+      }
+
+      .app-drawer_profile {
+        padding: 16px 25px;
+        --box-profile: {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
+      box-profile {
+        margin-top: 20px;
+      }
+
+      .close box-profile {
+        --box-profile: {
+          font-size: 0;
+        }
+      }
+
+      .app-drawer_menu {
+        margin-top: 5px;
+      }
+
+      iron-selector a {
         color: var(--app-secondary-color);
         display: block;
+        padding: 6px 22px;
+        text-decoration: none;
       }
 
-      app-drawer paper-icon-button {
-        margin-right: 18px;
-      }
-
-      app-drawer a:hover {
+      a:hover {
         background-color: var(--paper-blue-50);
       }
 
-      app-drawer a.selected {
-        font-weight: bold;
+      a iron-icon {
+        margin-left: 16px;
       }
+
+      .margin-item {
+        margin-top: 50px;
+      }
+
+      .close {
+        --app-drawer-width: 100px;
+      }
+
+      .close a {
+        font-size: 0;
+      }
+
+      .close iron-icon {
+        margin-right: 15px;
+      }
+
+      /*app-drawer {
+        outline: 1px solid black;
+      }
+
+      app-drawer > * {
+        outline: 2px solid yellow;
+      }
+
+      app-drawer > * > * {
+        outline: 3px solid green;
+      }
+
+      app-drawer > * > * > * {
+        outline: 1px solid blue;
+      }*/
 
       footer {
         /*height: 40px;*/
@@ -129,57 +206,21 @@
         }
       }
 
-      .box-profile {
-        --box-profile: {
-          padding: 10px;
-          font-size: 20px;
-          margin: 0 18px 18px 0;
-          font-weight: bold;
-        }
+      /* fab icon*/
+      paper-fab {
+        position: absolute;
+        left: .5em;
+        top: 5.6em;
+        z-index: 2;
+        will-change: transform;
+        transition: 0.2s -webkit-transform;
+        transition: 0.2s transform;
       }
 
-      .icon paper-icon-button {
-        margin-left: 10px;
+      paper-fab.shrink-to-hidden {
+        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
       }
-
-      .close, .close a {
-        --app-drawer-width: 90px;
-        font-size: 0;
-        transition: transform 3s;
-      }
-
-      .close paper-icon-button {
-        margin: 0 24px;
-      }
-
-      .close .pin {
-        display: none;
-      }
-
-      .close box-profile {
-        margin: 0;
-        padding: 0;
-        --box-profile: {
-          font-size: 0;
-          margin: 10px 18px;
-        }
-      }
-
-      .iconopen {
-        text-align: left;
-        float: left;
-        transform: rotate(360deg);
-      }
-
-      .iconclose {
-        margin-right: 16px;
-        transform: rotate(180deg);
-        margin: 0 auto;
-      }
-
-      /*.flex{
-        display: flex;
-      }*/
 
       box-breadcrumb {
         margin-right: 100px;
@@ -196,33 +237,28 @@
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
-      <app-drawer align="right" slot="drawer">
-          <div class="container flex-vertical">
-            <box-profile align="right" class="flexchild box-profile"></box-profile>
-            <div class="icon flex-vertical">
-              <div class="iconpage flexchild">
-                <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
-                  <a name="view1" href="/view1">صفحه اصلی<paper-icon-button icon="home"></paper-icon-button></a>
-                  <a name="view2" href="/view2">کاربران<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                  <a name="view3" href="/view3">گزارش ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                  <a name="view4" href="/view4">مشتریان<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                  <a name="view5" href="/view5">کالاها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                  <a name="view6" href="/view6">فرم ها<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                </iron-selector>
-              </div>
-              <div class="iconsetting">
-                <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
-                  <a name="view7" href="/view7">تنظیمات<paper-icon-button icon="help-outline"></paper-icon-button></a>
-                  <a name="view8" href="/view8">پشتیبانی<paper-icon-button icon="local-phone"></paper-icon-button></a>
-                  <a name="page-404" href="/page-404">خروج<paper-icon-button icon="power-settings-new"></paper-icon-button></a>
-                </iron-selector>
-              </div>
-              <div class="iconopen">
-                <paper-icon-button id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
-                <paper-icon-button class="pin" icon="help-outline"></paper-icon-button>
-              </div>
-            </div>
-          </div>
+      <app-drawer align="end" slot="drawer">
+        <div class="app-drawer_minimal">
+          <paper-icon-button class="iconopen" id="btndrawer" on-tap="_closedraw" icon="arrow-forward"></paper-icon-button>
+          <paper-icon-button class="iconopen pin" icon="help-outline"></paper-icon-button>
+        </div>
+        <div class="app-drawer_profile">
+          <box-profile class="box-profile"></box-profile>
+        </div>
+        <div class="app-drawer_menu">
+          <iron-selector selected="[[page]]" attr-for-selected="name" selected-class="selected" role="navigation">
+            <a name="view1" href="/view1">صفحه اصلی<iron-icon icon="home"></iron-icon></a>
+            <a name="view2" href="/view2">کاربران<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view3" href="/view3">گزارش ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view4" href="/view4">مشتریان<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view5" href="/view5">کالاها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view6" href="/view6">فرم ها<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view7" href="/view7" class="margin-item">تنظیمات<iron-icon icon="help-outline"></iron-icon></a>
+            <a name="view8" href="/view8">پشتیبانی<iron-icon icon="local-phone"></iron-icon></a>
+            <a name="view9" href="/view9">خروج<iron-icon icon="power-settings-new"></iron-icon></a>
+          </iron-selector>
+        </div>
+        <div></div>
       </app-drawer>
 
       <!-- Main content -->
