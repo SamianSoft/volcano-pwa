@@ -4,13 +4,7 @@
   Polymer({
     is : 'box-menu-icon',
 
-    // properties: {
-    // },
-
-    // observers: [
-    // ],
-
-    fireevent: function (event) {
+    fireEvent: function (event) {
       // console.log(event.target);
 
       var myevent = new CustomEvent("boxmenuevent", {
@@ -20,5 +14,5 @@
       });
       this.dispatchEvent(myevent);
     }
-  })
+  });
 })();
