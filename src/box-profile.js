@@ -2,13 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'box-profile',
-
-    // properties: {
-    // },
-
-    // observers: [
-    // ],
-
-  })
+    is: 'box-profile'
+  });
 })();

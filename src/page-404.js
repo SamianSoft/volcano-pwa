@@ -2,6 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'page-404',
-  })
+    is: 'page-404'
+  });
 })();

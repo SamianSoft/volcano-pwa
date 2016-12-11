@@ -2,6 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'page-view2',
-  })
+    is: 'page-view2'
+  });
 })();

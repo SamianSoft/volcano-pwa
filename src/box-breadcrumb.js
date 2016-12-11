@@ -2,13 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'box-breadcrumb',
-
-    // properties: {
-    // },
-
-    // observers: [
-    // ]
+    is: 'box-breadcrumb'
   });
-
 });
